@@ -54,17 +54,17 @@ public class Project {
         return Utility.PI / 2;
       }
       double z = x * x;
-      double p = z * (Utility.P0 + z
-          * (Utility.P1 + z * (Utility.P2 + z * (Utility.P3 + z * (Utility.P4 + z * Utility.P5)))));
-      double q = 1 + z * (Utility.Q1 + z * (Utility.Q2 + z * (Utility.Q3 + z * Utility.Q4)));
+      double p = z * (Utility.x0 + z
+          * (Utility.x1 + z * (Utility.x2 + z * (Utility.x3 + z * (Utility.x4 + z * Utility.x5)))));
+      double q = 1 + z * (Utility.y1 + z * (Utility.y2 + z * (Utility.y3 + z * Utility.y4)));
       double r = x - (Utility.PI_L / 2 - x * (p / q));
       return negative ? ((Utility.PI) / 2 + r) : (Utility.PI / 2 - r);
     }
     if (negative) {
       double z = (1 + x) * 0.5;
-      double p = z * (Utility.P0 + z
-          * (Utility.P1 + z * (Utility.P2 + z * (Utility.P3 + z * (Utility.P4 + z * Utility.P5)))));
-      double q = 1 + z * (Utility.Q1 + z * (Utility.Q2 + z * (Utility.Q3 + z * Utility.Q4)));
+      double p = z * (Utility.x0 + z
+          * (Utility.x1 + z * (Utility.x2 + z * (Utility.x3 + z * (Utility.x4 + z * Utility.x5)))));
+      double q = 1 + z * (Utility.y1 + z * (Utility.y2 + z * (Utility.y3 + z * Utility.y4)));
       double s = findSquareRoot(z);
       double w = p / q * s - Utility.PI_L / 2;
       return 2 * (s + w);
@@ -73,9 +73,9 @@ public class Project {
     double s = findSquareRoot(z);
     double df = (float) s;
     double c = (z - df * df) / (s + df);
-    double p = z * (Utility.P0 + z
-        * (Utility.P1 + z * (Utility.P2 + z * (Utility.P3 + z * (Utility.P4 + z * Utility.P5)))));
-    double q = 1 + z * (Utility.Q1 + z * (Utility.Q2 + z * (Utility.Q3 + z * Utility.Q4)));
+    double p = z * (Utility.x0 + z
+        * (Utility.x1 + z * (Utility.x2 + z * (Utility.x3 + z * (Utility.x4 + z * Utility.x5)))));
+    double q = 1 + z * (Utility.y1 + z * (Utility.y2 + z * (Utility.y3 + z * Utility.y4)));
     double w = p / q * s + c;
     return 2 * (df + w);
   }
