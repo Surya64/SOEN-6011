@@ -1,5 +1,6 @@
 package sep;
 
+import java.text.DecimalFormat;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import sep.Utility;
@@ -87,6 +88,7 @@ public class Project {
    */
 
   public static void main(String[] args) {
+    DecimalFormat df = new DecimalFormat("#.####");
 
     try {
       Scanner input = new Scanner(System.in);
@@ -104,12 +106,12 @@ public class Project {
         int option = Integer.parseInt(input.next());
         switch (option) {
           case 1:
-            System.out.println("Result of arrcos(" + x + ") is " +  res + " rad");
+            System.out.println("Result of arrcos(" + x + ") is " + df.format(res) + " rad");
             break;
 
           case 2:
             res = res * (180 / Utility.PI);
-            System.out.println("Result of arrcos(" + x + ") is " +  res + "°");
+            System.out.println("Result of arrcos(" + x + ") is " + df.format(res) + "°");
             break;
           default:
             System.out.println("Invlaid option");

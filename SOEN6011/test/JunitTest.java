@@ -32,7 +32,6 @@ public class JunitTest {
   @Test
   public void arccosInvalidTest() {
     double x = Project.arccos(3);
-    System.out.println(x);
     assertEquals(-1.0, x, 0);
   }
 
