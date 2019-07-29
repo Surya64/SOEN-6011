@@ -1,0 +1,113 @@
+\documentclass[12pt]{report}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage{gensymb}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{algpseudocode}
+\graphicspath{ {./images/} }
+\usepackage{fancyhdr}
+
+
+\title{ETERNITY: FUNCTIONS}								
+\author{Surya Prakash Govindaraju}						
+\date{}
+
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\let\thedate\@date
+\makeatother
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thetitle}
+\cfoot{\thepage}
+
+\begin{document}
+
+\begin{titlepage}
+	\centering
+    \vspace*{0.5 cm}
+\begin{center}    \textsc{\Large Concordia University}\\[2.0 cm]	\end{center}
+	\textsc{\Large  SOEN 6011 - Software Engineering Process }\\[0.5 cm]
+	\rule{\linewidth}{0.2 mm} \\[0.4 cm]
+	{ \huge \textbf \thetitle}\\[0.2 cm]
+	{ \huge \textbf{arccos(x)}}
+	\rule{\linewidth}{0.2 mm} \\[1.5 cm]
+
+\begin{center}   {\Large Deliverable 2}\\[2.0 cm]
+\end{center}	
+\begin{center}   {\Large \textbf{\theauthor}} \\[0.2 cm]
+                 {\large Student ID : 40085527 }\\[0.2 cm]
+                 {\large Team D }\\[2.0 cm]	
+                 {\large https://github.com/Surya64/SOEN-6011}
+\end{center}
+	
+\end{titlepage}
+
+\tableofcontents
+\pagebreak
+
+\renewcommand{\thesection}{\arabic{section}}
+\section{Debugger}
+\subsection{Description}
+In the project, I have used the Eclipse debugger to debug the code. The Eclipse Java IDE provides many debugging tools and views grouped in debug perspective to debug effectively and efficiently. Eclipse debugger provides functions to run the code step by step and track the values of variables while debugging.
+
+\subsection{Advantages}
+\begin{itemize}
+    \item The values of variables can be changed at debugging mode on the fly.
+    \item It has step filtering functions to step into or step over a statement
+    \item It offers a feature to show the logical structure that allows viewing the object in another meaningful structure/view.
+    \item It offers event based breakpoints.
+\end{itemize}
+
+\subsection{Disadvantages}
+\begin{itemize}
+    \item Debugging real time/multithread programs becomes harder as it involves huge lines of code and it’s better to perform testing using test cases.
+\end{itemize}
+
+\newpage
+\section{Quality Attributes}
+\subsection{Correctness}
+The function is tested for all possible values of x and results are verified with the actual scientific calculator. 
+\subsection{Efficient}
+The program is built on a simple structure which provides a low big O notation of complexity. The program runs quickly.
+\subsection{Maintainable}
+The program is split into methods for carrying out individual functions which makes it easier to add any other functionality or changes. The code can be easily understood by any developer by going through comments and Javadoc in source code. 
+\subsection{Robust}
+The program is tested for all possible faulty inputs and appropriate error handling has been built to avoid software failure.
+\subsection{Usable}
+The program is made user-friendly, anyone can perform the task successfully as it involves textual interface which is more convenient and understandable.
+
+\newpage
+\section{Quality of Source Code}
+\subsection{Description}
+To check the quality of source code, I have used the Checkstyle plug-in for eclipse. Checkstyle is a development tool to check the coding standards. It ensures the code adheres to the good programming practices followed during development.
+
+\subsection{Advantages}
+\begin{itemize}
+    \item Highly configurable and supports any coding standard.
+    \item It can be easily configured for automatic option to check the standards as and when the code is written by the developer.
+    \item It provides the appropriate error/warning messages as per the coding style applied.
+\end{itemize}
+
+\subsection{Disadvantages}
+\begin{itemize}
+    \item It doesn’t support for auto correct of invalid coding standards.
+    \item It checks only for the format style/presentation of code  but not correctness of code.
+    \item It doesn’t apply for non complied source code.
+\end{itemize}
+
+\begin{thebibliography}{9}
+\bibitem{Checkstyle}
+Checkstyle,
+\\\texttt{https://checkstyle.sourceforge.io/}
+
+\bibitem{Eclipse} 
+Debugger,
+\\\texttt{https://www.eclipse.org/}
+
+\end{thebibliography}
+\end{document}
+
