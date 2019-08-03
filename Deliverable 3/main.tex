@@ -1,0 +1,178 @@
+\documentclass[12pt]{report}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage{gensymb}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{algpseudocode}
+\graphicspath{ {./images/} }
+\usepackage{fancyhdr}
+
+
+\title{ETERNITY: FUNCTIONS}								
+\author{Surya Prakash Govindaraju}						
+\date{}
+
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\let\thedate\@date
+\makeatother
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thetitle}
+\cfoot{\thepage}
+\makeatletter
+\setlength{\@fptop}{5pt}
+\makeatother
+\begin{document}
+
+\begin{titlepage}
+	\centering
+    \vspace*{0.5 cm}
+\begin{center}    \textsc{\Large Concordia University}\\[2.0 cm]	\end{center}
+	\textsc{\Large  SOEN 6011 - Software Engineering Process }\\[0.5 cm]
+	\rule{\linewidth}{0.2 mm} \\[0.4 cm]
+	{ \huge \textbf \thetitle}\\[0.2 cm]
+	{ \huge \textbf{arccos(x)}}
+	\rule{\linewidth}{0.2 mm} \\[1.5 cm]
+
+\begin{center}   {\Large Deliverable 3}\\[2.0 cm]
+\end{center}	
+\begin{center}   {\Large \textbf{\theauthor}} \\[0.2 cm]
+                 {\large Student ID : 40085527 }\\[0.2 cm]
+                 {\large Team D }\\[2.0 cm]	
+                 {\large https://github.com/Surya64/SOEN-6011}
+\end{center}
+	
+\end{titlepage}
+
+\tableofcontents
+\pagebreak
+
+\renewcommand{\thesection}{\arabic{section}}
+\section{Source Code Review}
+For Source Code review of function F2, I have the used the Codacy automate tool for analysis.
+\subsection{Codacy}
+Codacy is an automated source code review tool used by many organizations to provide quality software. It automatically identifies issues through static code analysis. The main features are code review automation, code quality analytics, engineering analytics and security code analysis. It involves Checkstyle 8.13 and PMD 5.8.1 features combined. 
+\paragraph{}Checkstyle is a development tool which checks for programming style. It supports Google Java Style Guide and Sun Code Conventions. It is flexible and can configure easily. On the other hand PMD checks for programming flaws in source code like unused variables, empty catch blocks and unnecessary object creation. 
+\paragraph{}In Codacy, the issues are classified into different Categories like Security, Error Prone, Code Style, Compatibility, Unused Code and Performance. Below are the results of the review performed on function F2.
+
+\paragraph{} I was able to compile the source code without any errors in the Eclipse. The comments were understandable and easy to go through the flow the source code. 
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c |c| c| c|} 
+\hline
+ File Name & Issue & Duplication/Clones & Complexity \\ [0.5ex] 
+\hline
+Calculator & 3 & 0 & 15\\
+CalculatorTest & 2 & 0 & 1\\
+CalculatorDriver & 1 & 0 & 10\\
+CalculatorInterface & 0 & 0 & -\\
+LastTangentToOriginator & 0 & 0 & -\\
+LastTangentToCareTaker & 0 & 0 & -\\
+LastTangent & 0 & 0 & 1 \\
+\hline
+\end{tabular}
+\caption{Results from Codacy}
+\label{tab:my_label}
+\end{table}
+
+
+\begin{table}[]
+\centering
+\begin{tabular}{|c |c| c| c|} 
+\hline
+ File Name & LOC & Source LOC & Commented LOC \\ [0.5ex] 
+\hline
+Calculator & 87 & 64 & 10\\
+CalculatorTest & 64 & 38 & 12\\
+CalculatorDriver & 66 & 60 & 0\\
+CalculatorInterface & 12 & 7 & 0\\
+LastTangentToOriginator & 6 & 4 & 0\\
+LastTangentToCareTaker & 5 & 3 & 0\\
+LastTangent & 16 & 11 & 0\\
+\hline
+\end{tabular}
+\caption{Results from Codacy}
+\label{tab:my_label}
+\end{table}
+
+
+
+Below are the issues found in java files.
+\begin{enumerate}
+    \item Calculator.java
+    \begin{itemize}
+        \item Avoid reassigning parameters such as ‘x’ in line 42.
+        \item The method tan() has a NPath complexity of 973, which contains lot of nested if/else statements. A threshold of 200 is generally considered the point where measures should be taken to reduce complexity and increase readability.
+        \item Avoid throwing raw exception types (Line 83). Use subclass exception or error instead.
+    \end{itemize}
+    \item CalculatorTest.java
+    \begin{itemize}
+        \item Package name contains upper case characters.
+        \item assertTrue(!expr) can be replaced by assertFalse(expr) in Line 61.
+    \end{itemize}
+    \item CalculatorDriver.java
+    \begin{itemize}
+        \item A switch statement does not contain a break.
+    \end{itemize}
+    \item It has some indentation errors on all the files.
+    \item Javadoc is missing
+\end{enumerate}
+
+\newpage
+\section{Testing of Function F3}
+The function provided for testing is sinh(x) is a hyperbolic function of sine. The User has provided all the required artifacts to perform the testing.
+
+\paragraph{}Below are the environments used for testing the function.
+\begin{enumerate}
+    \item Java Eclipse environment - jdk 1.8
+    \item System used is windows7 with 4G RAM
+    \item JUnit 4.1 library
+\end{enumerate}
+
+\paragraph{}Test Step:
+\begin{enumerate}
+    \item The source code is imported into Eclipse and compiled.
+    \item The program is run for different inputs and results are verified.
+    \item Run JUnit test case written.
+\end{enumerate}
+
+Results:
+\begin{table}[h]
+\centering
+\begin{tabular}{|c |c| c|} 
+\hline
+ Requirement & Description & Result \\ [0.5ex] 
+\hline
+R1 , R2 & Valid input within the range & PASS\\
+R3 & Accepts all digits from 1-9 with decimals & PASS\\
+R4 & Out of range throws exception & PASS\\
+R5 & Non-numeric throws exception & PASS\\
+\hline
+\end{tabular}
+\caption{Test Results}
+\label{tab:my_label}
+\end{table}
+
+From the above, the results are positive and there are no errors found during the testing process. The Test Case covers all the requirements specified. The User can understand the steps to perform the calculation as its a textual interface.
+
+\begin{thebibliography}{9}
+\bibitem{Codacy}
+Codacy,
+\\\texttt{https://www.codacy.com/}
+
+\bibitem{wiki} 
+CheckStyle,
+\\\texttt{https://en.wikipedia.org/wiki/Checkstyle}
+
+\bibitem{pmd} 
+PMD,
+\\\texttt{https://en.wikipedia.org/wiki/PMD\_(software)}
+
+\end{thebibliography}
+\end{document}
+
